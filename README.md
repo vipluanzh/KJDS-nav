@@ -122,6 +122,7 @@ JUST DOWNLOAD AND DO WHAT THE FUCK YOU WANT TO.
 
 | 状态 | 网站名 | 网址 |
 | --- | --- | --- |
+| ✅已上线 | 早知121导航 - 轻松创建个人导航站| [https://www.zz121.com/](https://www.zz121.com/) |
 | ✅已上线 | 狼牌工作网址导航 | [https://www.volf.club/](https://www.volf.club/) |
 | ✅已上线 | 广告人导航 - 广告没门 | [https://adnodoor.com/nav/](https://adnodoor.com/nav/) |
 | ✅已上线 | 互联网资源库房 | [库房369-互联网资源库房](https://kf369.cn/) |
