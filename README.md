@@ -101,6 +101,10 @@ Docker部署版本:https://hub.docker.com/r/arvon2014/webstack-laravel
 
 JUST DOWNLOAD AND DO WHAT THE FUCK YOU WANT TO.
 
+#### 方法15. 注册用户，维护个人导航
+网站：[早知121, https://www.zz121.com](https://www.zz121.com)。  
+注册登陆后，维护自已的导航，还可以把自已的导航公开分享给他人使用。 [使用教程](https://zz121.com/tutorial.html)   
+
 
 
 关于图片资源
