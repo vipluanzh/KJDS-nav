@@ -78,6 +78,7 @@
                         </a>
                     </div>
                 </header>
+                
                 <ul id="main-menu" class="main-menu">
                     <li>
                         <a href="#获取信息" class="smooth">
@@ -298,6 +299,48 @@
                 <!-- <a href="https://github.com/WebStackPage/WebStackPage.github.io" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a> -->
 
             </nav>
+            <!DOCTYPE html>
+            <!DOCTYPE html>
+            <html lang="zh">
+            <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>搜索框与引擎切换</title>
+            <style>
+              body { font-family: Arial, sans-serif; }
+              .search-container { margin: 50px; }
+              .search-box { padding: 10px; width: 600px; }
+              .search-button { padding: 10px; }
+              .engine-select { padding: 10px; }
+              
+              /* 媒体查询，适配手机设备 */
+              @media (max-width: 600px) {
+                .search-box { width: 100%; }
+                .search-button, .engine-select { width: 100%; margin-top: 10px; }
+              }
+            </style>
+            </head>
+            <body>
+            <div class="search-container">
+              <input type="text" id="search-query" class="search-box" placeholder="搜索...">
+              <select id="search-engine" class="engine-select">
+                <option value="https://www.google.com/search?q=">Google</option>
+                <option value="https://www.bing.com/search?q=">Bing</option>
+                <option value="https://search.yahoo.com/search?p=">Yahoo</option>
+              </select>
+              <button onclick="performSearch()" class="search-button">搜索</button>
+            </div>
+            
+            <script>
+            function performSearch() {
+              var query = document.getElementById('search-query').value;
+              var engine = document.getElementById('search-engine').value;
+              var searchUrl = engine + encodeURIComponent(query);
+              window.open(searchUrl, '_blank');
+            }
+            </script>
+            </body>
+            </html>
             
             <!-- 推荐 -->
             <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="界面灵感"></i>推荐</h4>
