@@ -299,50 +299,114 @@
                 <!-- <a href="https://github.com/WebStackPage/WebStackPage.github.io" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a> -->
 
             </nav>
-            <!DOCTYPE html>
-            <!DOCTYPE html>
-            <html lang="zh">
-            <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>搜索框与引擎切换</title>
+            <!-- 搜索框 -->
             <style>
-              body { font-family: Arial, sans-serif; }
-              .search-container { margin: 50px; }
-              .search-box { padding: 10px; width: 600px; }
-              .search-button { padding: 10px; }
-              .engine-select { padding: 10px; }
-              
-              /* 媒体查询，适配手机设备 */
-              @media (max-width: 600px) {
-                .search-box { width: 100%; }
-                .search-button, .engine-select { width: 100%; margin-top: 10px; }
-              }
+              * {
+                    margin: 0;
+                    padding: 0;
+                    outline: none;
+                    box-sizing: border-box;
+                }
+
+                .search-container {
+                    position: relative;
+                    width: 100%;
+                    max-width: 100%;
+                    margin: auto;
+                    padding: 40px;
+                    background-color: #fff;
+                    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+                    border-radius: 8px;
+                }
+
+                .search-container .search-box,
+                .search-container select,
+                .search-container button {
+                    width: 100%;
+                    height: 40px;
+                    border: none;
+                    font-size: 17px;
+                    margin-bottom: 20px; /* Add space between elements */
+                    transition: all 0.3s ease;
+                }
+
+                .search-container .search-box {
+                    border-bottom: 2px solid #c0c0c0;
+                    position: relative;
+                }
+
+                .search-container .search-box:focus,
+                .search-container .search-box:valid {
+                    border-bottom: 2px solid #2c6fdb;
+                }
+
+                .search-container .engine-select {
+                    border: 2px solid #c0c0c0;
+                    border-radius: 5px;
+                    padding: 5px;
+                }
+
+                .search-container .search-button {
+                    background-color: #2c6fdb;
+                    color: white;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                .search-container .search-button:hover {
+                    background-color: #1a53c5;
+                }
+
+                /* Responsive design for smaller screens */
+                @media (max-width: 600px) {
+                    .search-container {
+                        padding: 20px;
+                    }
+
+                    .search-container .search-box,
+                    .search-container .engine-select,
+                    .search-container .search-button {
+                        height: 35px;
+                        font-size: 15px;
+                    }
+                }
+                
+
             </style>
             </head>
             <body>
             <div class="search-container">
               <input type="text" id="search-query" class="search-box" placeholder="搜索...">
+              <label>搜索</label>
               <select id="search-engine" class="engine-select">
                 <option value="https://www.google.com/search?q=">Google</option>
                 <option value="https://www.bing.com/search?q=">Bing</option>
                 <option value="https://search.yahoo.com/search?p=">Yahoo</option>
+                <option value="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&ch=&tn=baidu&bar=&wd=">百度</option>
+                <option value="https://www.sogou.com/web?query=">搜狗</option>
               </select>
-              <button onclick="performSearch()" class="search-button">搜索</button>
+              <button onclick="performSearch()" class="search-button">立即搜索</button>
             </div>
             
             <script>
             function performSearch() {
-              var query = document.getElementById('search-query').value;
-              var engine = document.getElementById('search-engine').value;
-              var searchUrl = engine + encodeURIComponent(query);
-              window.open(searchUrl, '_blank');
+            var query = document.getElementById('search-query').value;
+            var engine = document.getElementById('search-engine').value;
+            var searchUrl = engine + encodeURIComponent(query);
+            window.open(searchUrl, '_blank');
             }
+
+            // 添加Enter键搜索功能
+            document.getElementById('search-query').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                performSearch();
+            }
+            });
             </script>
             </body>
-            </html>
             
             <!-- 推荐 -->
+            <br>
             <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="界面灵感"></i>推荐</h4>
             <div class="row">
                 <div class="col-sm-3">
