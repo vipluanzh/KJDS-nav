@@ -379,9 +379,11 @@
               <select id="search-engine" class="engine-select">
                 <option value="https://www.google.com/search?q=">Google</option>
                 <option value="https://www.bing.com/search?q=">Bing</option>
+                <option value="https://duckduckgo.com/?q=">DuckDuckGo</option>
                 <option value="https://search.yahoo.com/search?p=">Yahoo</option>
-                <option value="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&ch=&tn=baidu&bar=&wd=">百度</option>
+                <option value="https://www.baidu.com/s?&wd=">百度</option>
                 <option value="https://www.sogou.com/web?query=">搜狗</option>
+                <option value="https://fsoufsou.com/search?q=">F搜</option>
               </select>
               <button onclick="performSearch()" class="search-button">立即搜索</button>
             </div>
@@ -400,6 +402,35 @@
                 performSearch();
             }
             });
+
+            // 当页面加载完成时，设置默认搜索引擎
+            window.onload = function() {
+            // 检查本地存储中是否有保存的搜索引擎
+            var savedEngine = localStorage.getItem('defaultSearchEngine');
+            if (savedEngine) {
+                document.getElementById('search-engine').value = savedEngine;
+            }
+            };
+
+            // 当用户更改搜索引擎时，保存他们的选择
+            document.getElementById('search-engine').addEventListener('change', function() {
+            var selectedEngine = this.value;
+            localStorage.setItem('defaultSearchEngine', selectedEngine);
+            });
+
+            function performSearch() {
+            var query = document.getElementById('search-query').value;
+            var engine = document.getElementById('search-engine').value;
+            var searchUrl = engine + encodeURIComponent(query);
+            window.open(searchUrl, '_blank');
+            }
+
+            document.getElementById('search-query').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                performSearch();
+            }
+            });
+
             </script>
             </body>
             
